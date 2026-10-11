@@ -509,3 +509,21 @@ img[src*="icon-transparent"] {
     background: rgba(255, 92, 122, 0.12);
     color: var(--tc-danger);
 }
+
+/* Esconde o botão "Esqueci a senha" */
+#loginPage .raised.btnForgotPassword {
+    display: none !important;
+}
+
+/* Oculta o link do painel Jellyfin Enhanced no menu lateral/perfil */
+.jellyfinEnhancedSection { 
+    display: none !important; 
+}
+
+.je-request-external-links {
+    display: none !important;
+}
+
+.jellyseerr-icon-on-card {
+    display: none !important;
+}
