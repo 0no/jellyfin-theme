@@ -269,25 +269,30 @@ img[src*="icon-transparent"] {
     border-radius: var(--tc-radius);
 }
 
-.cardImageContainer,
-.cardPadder,
 .cardScalable {
+    position: relative;
     border-radius: var(--tc-radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardPadder,
+.cardImageContainer,
+.cardOverlayContainer {
+    border-radius: inherit;
 }
 
 .cardImageContainer {
     background-color: var(--tc-surface);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover .cardImageContainer,
-.card:focus-within .cardImageContainer {
+.card:hover .cardScalable,
+.card:focus-within .cardScalable {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--tc-primary);
 }
 
 .cardOverlayContainer {
-    border-radius: var(--tc-radius);
     background: rgba(11, 16, 29, 0.6);
 }
 
