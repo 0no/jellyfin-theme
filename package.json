@@ -1,0 +1,16 @@
+{
+  "name": "jellyfin-theme-telas-club",
+  "version": "1.0.0",
+  "description": "Tema Telas Club para Jellyfin 10.11.x",
+  "style": "theme.css",
+  "main": "theme.css",
+  "files": [
+    "theme.css",
+    "assets/logo.png"
+  ],
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  },
+  "keywords": ["jellyfin", "theme", "css"],
+  "license": "MIT"
+}

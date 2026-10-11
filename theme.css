@@ -1,0 +1,496 @@
+/*
+ * Telas Club - Jellyfin theme (Jellyfin 10.11.x)
+ * Palette extracted from jellyfin-assinaturas/public/style.css
+ */
+
+:root {
+    --tc-bg: #0f1524;
+    --tc-bg-deep: #0b101d;
+    --tc-bg-soft: #151d30;
+    --tc-surface: #1e2940;
+    --tc-surface-hover: #26334f;
+    --tc-input: #10192b;
+    --tc-border: #2a3752;
+    --tc-text: #f5f8ff;
+    --tc-text-muted: #bac7de;
+    --tc-text-dim: #7f90b1;
+    --tc-primary: #00a4dc;
+    --tc-primary-strong: #0087b5;
+    --tc-accent: #aa5cc3;
+    --tc-danger: #ff5c7a;
+    --tc-success: #42d392;
+    --tc-glow: rgba(0, 164, 220, 0.35);
+    --tc-radius: 12px;
+}
+
+/* ---------- Base ---------- */
+html,
+body,
+.backgroundContainer,
+.skinBody {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0, 164, 220, 0.16), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(170, 92, 195, 0.14), transparent 36%),
+        linear-gradient(160deg, var(--tc-bg) 0%, var(--tc-bg-deep) 100%) fixed;
+    color: var(--tc-text);
+}
+
+.backgroundContainer.withBackdrop {
+    background: rgba(11, 16, 29, 0.82);
+}
+
+.dashboardDocument,
+.libraryPage,
+.page,
+.pageContainer,
+.content-primary {
+    color: var(--tc-text);
+}
+
+a,
+.button-link {
+    color: var(--tc-primary);
+}
+
+.secondaryText,
+.fieldDescription,
+.listItemBodyText.secondary,
+.cardText-secondary,
+.mdl-switch__label {
+    color: var(--tc-text-muted);
+}
+
+::selection {
+    background: var(--tc-primary);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--tc-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tc-border);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--tc-primary-strong);
+}
+
+/* ---------- Header / drawer ---------- */
+.skinHeader,
+.skinHeader.semiTransparent {
+    background: rgba(15, 21, 36, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--tc-border);
+    color: var(--tc-text);
+}
+
+.mainDrawer,
+.MuiDrawer-paper {
+    background: linear-gradient(180deg, var(--tc-surface), var(--tc-bg-soft)) !important;
+    border-right: 1px solid var(--tc-border);
+    color: var(--tc-text) !important;
+}
+
+.navMenuOption,
+.MuiListItemButton-root {
+    border-radius: 10px;
+    margin: 2px 8px;
+    color: var(--tc-text-muted);
+}
+
+.navMenuOption:hover,
+.MuiListItemButton-root:hover {
+    background: var(--tc-surface-hover) !important;
+    color: var(--tc-text);
+}
+
+.navMenuOption-selected,
+.MuiListItemButton-root.Mui-selected {
+    background: linear-gradient(90deg, rgba(0, 164, 220, 0.22), rgba(170, 92, 195, 0.12)) !important;
+    color: var(--tc-primary) !important;
+}
+
+.headerTabs .emby-tab-button-active,
+.MuiTab-root.Mui-selected {
+    color: var(--tc-primary) !important;
+    border-bottom-color: var(--tc-primary) !important;
+}
+
+.MuiTabs-indicator {
+    background-color: var(--tc-primary) !important;
+}
+
+/* ---------- Branding (logo + nome) ---------- */
+.pageTitleWithLogo,
+.pageTitleWithDefaultLogo {
+    background-image: url("./assets/logo.png") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    width: auto !important;
+    min-width: 11em;
+    height: 2.4em !important;
+    padding-left: 3em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.pageTitleWithLogo::after,
+.pageTitleWithDefaultLogo::after {
+    content: "Telas Club";
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--tc-primary);
+}
+
+.adminDrawerLogo img,
+.imgLogoIcon,
+.loginPage .imgLogoIcon,
+img[src*="banner-light"],
+img[src*="icon-transparent"] {
+    content: url("./assets/logo.png");
+    object-fit: contain;
+}
+
+/* ---------- Buttons ---------- */
+.raised,
+.button-submit,
+.button-accent,
+.MuiButton-contained {
+    background: var(--tc-primary) !important;
+    color: #fff !important;
+    border-radius: 10px;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.raised:hover,
+.button-submit:hover,
+.MuiButton-contained:hover {
+    background: var(--tc-primary-strong) !important;
+    box-shadow: 0 0 0 4px var(--tc-glow);
+}
+
+.raised.button-cancel,
+.button-cancel {
+    background: var(--tc-surface) !important;
+    border: 1px solid var(--tc-border);
+}
+
+.button-delete,
+.MuiButton-colorError {
+    color: var(--tc-danger) !important;
+}
+
+.emby-button:focus,
+.emby-button.show-focus:focus,
+.MuiButtonBase-root:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--tc-glow);
+}
+
+.paper-icon-button-light:hover,
+.MuiIconButton-root:hover {
+    color: var(--tc-primary);
+    background: rgba(0, 164, 220, 0.12);
+}
+
+/* ---------- Inputs ---------- */
+.emby-input,
+.emby-textarea,
+.emby-select,
+.emby-select-withcolor,
+.MuiOutlinedInput-root,
+.MuiInputBase-root {
+    background: var(--tc-input) !important;
+    color: var(--tc-text) !important;
+    border: 1px solid var(--tc-border);
+    border-radius: 10px;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: var(--tc-border) !important;
+}
+
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus,
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--tc-primary) !important;
+    box-shadow: 0 0 0 4px var(--tc-glow);
+}
+
+.emby-input::placeholder,
+.emby-textarea::placeholder {
+    color: var(--tc-text-dim);
+}
+
+.emby-select-withcolor > option {
+    background: var(--tc-surface);
+    color: var(--tc-text);
+}
+
+.inputLabel,
+.MuiInputLabel-root {
+    color: var(--tc-text-muted) !important;
+}
+
+.inputLabelFocused,
+.MuiInputLabel-root.Mui-focused {
+    color: var(--tc-primary) !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline,
+.MuiCheckbox-root.Mui-checked,
+.MuiSwitch-switchBase.Mui-checked {
+    color: var(--tc-primary) !important;
+}
+
+.MuiSwitch-track,
+.mdl-switch.is-checked .mdl-switch__track {
+    background-color: var(--tc-border);
+}
+
+.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track,
+.mdl-switch.is-checked .mdl-switch__track {
+    background-color: var(--tc-primary-strong) !important;
+}
+
+/* ---------- Cards ---------- */
+.cardBox {
+    border-radius: var(--tc-radius);
+}
+
+.cardImageContainer,
+.cardPadder,
+.cardScalable {
+    border-radius: var(--tc-radius);
+}
+
+.cardImageContainer {
+    background-color: var(--tc-surface);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover .cardImageContainer,
+.card:focus-within .cardImageContainer {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--tc-primary);
+}
+
+.cardOverlayContainer {
+    border-radius: var(--tc-radius);
+    background: rgba(11, 16, 29, 0.6);
+}
+
+.cardOverlayButton-br .cardOverlayFab-primary,
+.cardOverlayFab-primary {
+    background: var(--tc-primary) !important;
+    color: #fff !important;
+}
+
+.cardText {
+    color: var(--tc-text);
+}
+
+.itemProgressBar,
+.innerCardFooter {
+    background: rgba(11, 16, 29, 0.75);
+}
+
+.itemProgressBarForeground,
+.MuiLinearProgress-bar {
+    background: linear-gradient(90deg, var(--tc-primary), var(--tc-accent)) !important;
+}
+
+.countIndicator,
+.playedIndicator,
+.cardIndicators .indicator {
+    background: var(--tc-primary) !important;
+    color: #fff;
+}
+
+.unplayedIndicator {
+    background: var(--tc-accent) !important;
+}
+
+/* ---------- Sections / lists ---------- */
+.sectionTitle,
+.sectionTitle-cards,
+.sectionTitleContainer h2 {
+    color: var(--tc-text);
+    letter-spacing: 0.3px;
+}
+
+.verticalSection,
+.detailSection,
+.paperList,
+.MuiPaper-root {
+    border-radius: var(--tc-radius);
+}
+
+.paperList,
+.MuiPaper-root:not(.MuiDrawer-paper):not(.MuiAppBar-root) {
+    background: linear-gradient(180deg, var(--tc-surface), var(--tc-bg-soft));
+    border: 1px solid var(--tc-border);
+    color: var(--tc-text);
+}
+
+.listItem:hover,
+.listItem-border:hover,
+.MuiTableRow-hover:hover {
+    background: var(--tc-surface-hover) !important;
+}
+
+.listItem-border,
+.MuiTableCell-root,
+.MuiDivider-root {
+    border-color: var(--tc-border) !important;
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+    color: var(--tc-text-muted);
+    background: var(--tc-bg-soft);
+}
+
+/* ---------- Item detail ---------- */
+.detailPagePrimaryContainer,
+.detailRibbon {
+    background: transparent;
+}
+
+.itemName,
+.parentName {
+    color: var(--tc-text);
+}
+
+.mediaInfoItem,
+.mediaInfoText {
+    color: var(--tc-text-muted);
+}
+
+.mediaInfoCriticRating.mediaInfoCriticRatingFresh,
+.starIcon {
+    color: var(--tc-success);
+}
+
+.mediaInfoCriticRating.mediaInfoCriticRatingRotten {
+    color: var(--tc-danger);
+}
+
+.mediaInfoOfficialRating,
+.mediaInfoTimerIcon {
+    border-color: var(--tc-border);
+    color: var(--tc-text-muted);
+}
+
+/* ---------- Dialogs / menus ---------- */
+.dialog,
+.actionSheetContent,
+.MuiDialog-paper,
+.MuiMenu-paper,
+.MuiPopover-paper {
+    background: linear-gradient(180deg, var(--tc-surface), var(--tc-bg-soft)) !important;
+    border: 1px solid var(--tc-border);
+    border-radius: var(--tc-radius);
+    color: var(--tc-text) !important;
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45);
+}
+
+.dialogBackdrop,
+.MuiBackdrop-root {
+    background: rgba(5, 8, 16, 0.7);
+}
+
+.actionSheetMenuItem:hover,
+.MuiMenuItem-root:hover {
+    background: var(--tc-surface-hover) !important;
+}
+
+.toast,
+.MuiSnackbarContent-root {
+    background: var(--tc-surface) !important;
+    border: 1px solid var(--tc-border);
+    color: var(--tc-text) !important;
+}
+
+/* ---------- Login page ---------- */
+.standalonePage,
+.loginPage {
+    background: transparent;
+}
+
+.manualLoginForm,
+.loginPage .padded-left {
+    background: linear-gradient(180deg, var(--tc-surface), var(--tc-bg-soft));
+    border: 1px solid var(--tc-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.manualLoginForm .button-submit {
+    width: 100%;
+}
+
+/* ---------- Video OSD ---------- */
+.videoOsdBottom .osdControls,
+.upNextContainer {
+    color: var(--tc-text);
+}
+
+.osdPositionSlider,
+.sliderBubble {
+    color: var(--tc-primary);
+}
+
+.mdl-slider::-webkit-slider-thumb,
+.emby-slider::-webkit-slider-thumb {
+    background: var(--tc-primary);
+}
+
+.mdl-slider-background-lower,
+.emby-slider-background-lower {
+    background: var(--tc-primary) !important;
+}
+
+.mdl-slider-background-upper,
+.emby-slider-background-upper {
+    background: var(--tc-border);
+}
+
+/* ---------- Dashboard ---------- */
+.MuiAppBar-root {
+    background: rgba(15, 21, 36, 0.92) !important;
+    border-bottom: 1px solid var(--tc-border);
+}
+
+.MuiChip-root {
+    background: var(--tc-surface);
+    color: var(--tc-text);
+    border: 1px solid var(--tc-border);
+}
+
+.MuiSlider-root,
+.MuiCircularProgress-root,
+.MuiLinearProgress-root:not(.x) {
+    color: var(--tc-primary);
+}
+
+.MuiAlert-standardSuccess {
+    background: rgba(66, 211, 146, 0.12);
+    color: var(--tc-success);
+}
+
+.MuiAlert-standardError {
+    background: rgba(255, 92, 122, 0.12);
+    color: var(--tc-danger);
+}
