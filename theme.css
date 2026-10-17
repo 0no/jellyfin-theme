@@ -92,6 +92,16 @@ a,
     color: var(--tc-text);
 }
 
+/* Sem linha/fundo do header sobre o player de vídeo */
+.skinHeader.osdHeader,
+.skinHeader.osdHeader.semiTransparent,
+.skinHeader.osdHeader.skinHeader-withBackground,
+.skinHeader.osdHeader.headroom--unpinned {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
 .mainDrawer,
 .MuiDrawer-paper {
     background: linear-gradient(180deg, var(--tc-surface), var(--tc-bg-soft)) !important;
@@ -141,6 +151,8 @@ a,
     padding-left: 3em;
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
+    overflow: visible !important;
 }
 
 .pageTitleWithLogo::after,
@@ -150,6 +162,22 @@ a,
     font-weight: 700;
     letter-spacing: 0.3px;
     color: var(--tc-primary);
+    white-space: nowrap;
+}
+
+/* Logo/nome menores no mobile para não cortar o texto */
+@media all and (max-width: 600px) {
+    .pageTitleWithLogo,
+    .pageTitleWithDefaultLogo {
+        min-width: 8em;
+        height: 2em !important;
+        padding-left: 2.2em;
+    }
+
+    .pageTitleWithLogo::after,
+    .pageTitleWithDefaultLogo::after {
+        font-size: 1rem;
+    }
 }
 
 .adminDrawerLogo img,
